@@ -1,0 +1,31 @@
+<html>
+    <head></head>
+<body>
+    <h1>This is arrays page</h1>
+    
+   1.even/odd check
+    {% for number in numbers %}
+        {% if number|divisibleby:2 %}
+            <li>{{number}}- even</li>
+        {% else %}
+            <li>{{number}}- odd</li>
+        {% endif %}
+    {% endfor %}
+
+    2.show numbers greater than 40
+    {% for number in numbers %}
+        {% if number > 40 %}
+            <li>{{number}}</li>
+        {% endif %}
+    {% endfor %}
+
+    4.handle empty array
+    {% for number in numbers %}
+        {% if number > 95 %}
+            <li>{{number}}</li>
+        {% endif %}
+    {% empty %}
+            <p>No such number present</p>
+    {% endfor %}
+</body>
+</html>

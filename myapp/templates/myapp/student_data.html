@@ -1,0 +1,46 @@
+<html>
+<head>
+<style>
+table{
+    border: 1px solid black;
+}
+td,th{
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+    <h2>Filtered Students</h2>
+    <table>
+        <tr><th>Name</th><th>Marks</th><th>Subject</th></tr>
+        {% for student in filtered %}
+        <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.marks}}</td>
+            <td>{{student.subject}}</td>
+        </tr>
+        {% empty %}
+        <tr><td>No students found</td></tr>
+        {% endfor %}
+    </table>
+    <br><br>
+
+    <h2>Sorted Students</h2>
+    <table>
+        <tr><th>Name</th><th>Marks</th><th>Subject</th></tr>
+        {% for student in sorted %}
+        <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.marks}}</td>
+            <td>{{student.subject}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Summary</h2>
+    Total Student : {{summary.total}} <br>
+    Average Marks : {{summary.average}} <br>
+    Highest marks : {{summary.highest}} <br>
+    Lowest marks : {{summary.lowest}}
+</body>
+</html>

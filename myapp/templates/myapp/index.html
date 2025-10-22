@@ -1,0 +1,34 @@
+<html> 
+<head> 
+    <title>jQuery + Django Example</title> 
+    <!-- Load jQuery --> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+</head>
+<body> 
+<h2>Click the button to load data using jQuery AJAX</h2> 
+<button id="loadBtn">Load Data</button> 
+<div id="result" style="margin-top:20px; font-weight:bold; color:blue;"></div> 
+<script> 
+$(document).ready(function() { 
+    $("#loadBtn").click(function() { 
+        $.ajax({ 
+            url: "/get-data/",   // Django URL 
+            type: "GET", 
+            success: function(response) { 
+                // response is JSON 
+                $("#result").html( 
+                    "Name: " + response.name + "<br>" + 
+                    "Age: " + response.age + "<br>" + 
+                    "City: " + response.city 
+                ); 
+            }, 
+            error: function(xhr, status, error) { 
+                $("#result").html("Error: " + error); 
+            } 
+        }); 
+    }); 
+}); 
+</script> 
+ 
+</body> 
+</html>

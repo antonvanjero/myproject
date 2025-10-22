@@ -1,0 +1,14 @@
+<html>
+<head></head>
+    <body>
+        <h2>Product list</h2>
+        <table>
+            <tr><th>Name</th><th>Price</th><th>Description</th></tr>
+            {% for product in products %}
+                <tr><td>{{product.name}}</td><td>{{product.price}}</td><td>{{product.description}}</td></tr>
+            {% empty %}
+                <tr><td>no items</td></tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

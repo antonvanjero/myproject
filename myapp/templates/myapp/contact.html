@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact</title>
+</head>
+<body>
+  <h1>Contact Us</h1>
+
+  <!-- Show non-field form errors (if any) -->
+  {% if form.non_field_errors %}
+    <div>
+      {{ form.non_field_errors }}
+    </div>
+  {% endif %}
+
+  <form method="post">
+    {% csrf_token %}
+
+    <!-- Fast way: render all fields -->
+    {{ form.as_p }}
+
+    <!-- Or manual control (example):
+    <p>
+      {{ form.name.label_tag }}<br>
+      {{ form.name }}<br>
+      {{ form.name.errors }}
+    </p>
+    -->
+
+    <button type="submit">Send</button>
+  </form>
+</body>
+</html>
