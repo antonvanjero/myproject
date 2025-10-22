@@ -1,0 +1,71 @@
+<html>
+<head>
+<style>
+body{
+    background-color: blue;
+}
+.form_box{
+    margin-top: 70px;
+    margin-left: 350px;
+    background-color: white;
+    display: inline-block;
+    padding: 50px;
+}
+.content{
+    display: flex;
+}
+label{
+    font-size: large;
+    font-style: bold;
+}
+
+.box2{
+    margin-left: 50px;
+}
+.gender{
+    margin-left: 50px;
+    
+}
+button{
+    padding: 5px 170px 5px 170px;
+    border: 1px solid white;
+    border-radius: 3px;
+    color:white;
+    background-color: blue;
+    
+}
+</style>
+</head>
+<body>
+    <form class="form_box" action="">
+        <h3>Registration</h3>
+        <div class="content">
+            <div class="box1">
+                <label for="name">Full Name</label><br>
+                <input type="text" id="name"><br><br>
+                <label for="username">Username</label><br>
+                <input type="text" id="username"><br><br>
+                <label for="email">Email</label><br>
+                <input type="email" id="email"><br><br>
+            </div>
+            <div class="box2">
+                <label for="phone">Phone number</label><br>
+                <input type="text" id="phone" maxlength="10"><br><br>
+                <label for="password">Password</label><br>
+                <input type="password" id="password"><br><br>
+                <label for="cpassword">Confirm password</label><br>
+                <input type="password" id="cpassword"><br><br>
+            </div>
+        </div>
+        <label for="">Gender</label><br>
+        <input type="radio" id="male">
+        <label for="male">Male</label>
+        <input class="gender"  type="radio" id="female">
+        <label for="female">Female</label>
+        <input class="gender"  type="radio" id="none">
+        <label for="none">Prefer not to say</label><br><br>
+        <button>Register</button>
+
+    </form>
+</body>
+</html>

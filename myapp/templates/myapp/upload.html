@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>file upload</title>
+    </head>
+<body>
+    <h2>upload file</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">upload</button>
+    </form>
+
+    <h3>uploaded files</h3>
+    <ul>
+        {% for file in files %}
+        <li>{{file.title}} - <a href="{{ file.uploaded_file.url }}">{{ file.uploaded_file.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<head></head>
+<body>
+    <h1>This is students page</h1>
+   1.print all students name
+    {% for student in students %}
+        <li>
+            {{student.name}}
+        </li>
+    {% endfor %} 
+
+    2.print name with marks > 50
+    {% for student in students %}
+        {% if student.marks > 50 %}
+            <li>
+            Name- {{student.name}} & Marks- {{student.marks}}
+            </li>
+        {% endif %}
+    {% endfor %}
+
+    3.show pass/fail for each student
+    {% for student in students %}
+        {% if student.marks > 50 %}
+            <li>{{student.name}}- pass</li>     
+        {% else %}
+            <li>{{student.name}}- fail</li>
+        {% endif %}
+    {% endfor %}
+    
+    4.print students from chennai only
+    {% for student in students %}
+        {% if student.city == 'chennai' %}
+            <li>{{student.name}}</li>
+        {% endif %}
+    {% endfor %}
+
+    5.show toppers whose marks >= 90
+    <p>Toppers</p>
+    {% for student in students %}
+        {% if student.marks >= 90 %}
+            <li>{{student.name}}</li>
+        {% endif %}
+    {% endfor %}
+
+    6.Highlight failed students
+    {% for student in students %}
+        {% if student.marks < 50 %}
+            <li style="color: red;">{{student.name}}</li>
+        {% else %}
+            <li>{{student.name}}</li>
+        {% endif %}
+    {% endfor %} 
+
+   
+        
+            
+
+
+</body>
+</html>

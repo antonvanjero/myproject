@@ -1,0 +1,40 @@
+<html> 
+<head> 
+    <title>Django Storage Example</title> 
+</head> 
+<body> 
+    <h2>Django Local & Session Storage Demo</h2> 
+ 
+    <button onclick="setLocalStorage()">Set Local Storage</button> 
+    <button onclick="getLocalStorage()">Get Local Storage</button><br><br> 
+ 
+    <button onclick="setSessionStorage()">Set Session Storage</button> 
+    <button onclick="getSessionStorage()">Get Session Storage</button><br><br> 
+ 
+    <div id="output"></div> 
+ 
+    <script> 
+        // Local Storage (persists even after closing browser) 
+        function setLocalStorage() { 
+            localStorage.setItem('username', 'jero'); 
+             document.getElementById('output').innerText = "Local Storage Set!"; 
+        } 
+ 
+        function getLocalStorage() { 
+            let name = localStorage.getItem('username'); 
+            document.getElementById('output').innerText = "Local Storage: " + name; 
+        } 
+ 
+        // Session Storage (persists until tab is closed) 
+        function setSessionStorage() { 
+            sessionStorage.setItem('sessionName', 'Jero_Session'); 
+            document.getElementById('output').innerText = "Session Storage Set!"; 
+        } 
+ 
+        function getSessionStorage() { 
+            let sname = sessionStorage.getItem('sessionName'); 
+            document.getElementById('output').innerText = "Session Storage: " + sname; 
+        } 
+    </script> 
+</body> 
+</html>
